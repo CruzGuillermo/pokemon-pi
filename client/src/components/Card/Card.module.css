@@ -11,7 +11,7 @@
   font-weight: 600;
   letter-spacing: 2px;
   background: transparent;
-  color: rgb(255, 255, 255);
+  /* color: rgb(255, 255, 255); */
   overflow: hidden;
   box-shadow: 0 0 0 0 transparent;
   -webkit-transition: all 0.2s ease-in;

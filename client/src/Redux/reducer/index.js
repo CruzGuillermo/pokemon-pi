@@ -134,6 +134,13 @@ const initialState = {
           ...state,
           loading: true,
         };
+      case "Reset":
+        return {
+          ...state,
+          copyPokemons: [],
+          types: [],
+          loading: true
+        }
   
       default:
         return {...state};

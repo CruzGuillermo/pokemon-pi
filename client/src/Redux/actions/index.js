@@ -111,3 +111,10 @@ export function postPokemon(payload) {
     }
   };
 }
+
+export function Reset(payload){
+  return {
+    type: "Reset",
+    payload,
+  }
+}
