@@ -1,0 +1,120 @@
+.button {
+  border-radius: 10px;
+  background: white;
+  box-shadow: 4px 6px 2px rgba(20, 15, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 2px rgb(26, 92, 112) solid;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.button:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+.id{
+  padding: 10px;
+  color: black;
+  justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 30px;
+  margin-top: 5px;
+  color: white;
+}
+
+.img {
+  display: flex;
+  align-items: center;
+  width: 230px;
+  margin: -12px 15px 0px 15px;
+  /* background: white; */
+}
+
+/* .types {
+  display: flex;
+  gap: 13px;
+  justify-content: center;
+} */
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 112px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: rgb(26, 92, 112);
+}
+
+.idPoke {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}

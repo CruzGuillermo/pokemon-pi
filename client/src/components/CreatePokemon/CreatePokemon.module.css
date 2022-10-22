@@ -1,0 +1,224 @@
+.buttonn {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: rgb(0, 0, 0);
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.buttonn:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.buttonn:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.buttonn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.buttonn:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+.container {
+  /* background-image: url("./create4.jpg"); */
+  background-size: cover;
+    display: grid;
+    grid-auto-rows: 130px, auto, 130px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    /* background-image: url("../../images/dark-bgd.jpg"); */
+    /* background-size: cover; */
+  }
+  
+  .funcional {
+    width: 10%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+  
+  .link {
+    color: #006eff;
+    background-color: rgb(19, 19, 19, 0.7);
+    border: 1px solid #006eff;
+    justify-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 6px 25px;
+    font-size: 16px;
+    transition: all 1s ease-in-out;
+  }
+  
+  .link:hover {
+    box-shadow:0px 0px 25px 13px #006eff inset;
+    color: white;
+  }
+  
+  .main {
+    display: grid;
+    gap: 20px;
+    background-image: no-repeat center/80%;
+    justify-items: center;
+  }
+  
+  .formContainer {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 0px 30px;
+  }
+  
+  
+  .footer {
+    background: black;
+    color: #fff;
+    padding-left: 10px;
+    font-weight: lighter;
+  }
+  
+  .inputContainer {
+    width: 100%;
+    margin-right: -30px;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    padding: 3px;
+    gap: 6px;
+  }
+  
+  .inputContainer label {
+    text-align: left;
+    color: black
+  }
+  
+  .inputContainer input {
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #006eff;
+  }
+  
+  .inputContainer input:focus {
+    outline: none;
+  }
+  
+  .btn {
+    margin: 10px 0px;
+    padding: 6px 16px;
+    color: #006eff;
+    background-color: rgb(19, 19, 19, 0.7);
+    border: 1px solid #006eff;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 1s ease-in-out;
+  }
+
+  .btn:hover {
+    box-shadow:0px 0px 25px 13px #006eff inset;
+    color: white;
+  }
+  
+  .inputContainer select {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #006eff;
+    box-shadow: none;
+  }
+  
+  .selected {
+    display: flex;
+    border: 1px solid #006eff;
+    border-radius: 8px;
+    min-width: 200px;
+    max-width: 50%;
+    height: 30px;
+    margin: 2px 0px;
+    justify-content: space-between;
+  }
+  
+  .p {
+    text-transform: capitalize;
+    color: #fff;
+    padding: 3px;
+    display: flex;
+    height: 23px;
+    margin-top: -2px;
+    margin-left: 2px;
+    justify-content: center;
+  }
+  
+  .btnDelete {
+    border: none;
+    border-radius: 15%;
+    padding: 10px;
+    padding: 6px;
+    color: #006eff;
+    background-color: rgb(19, 19, 19, 0.7);
+    border: 1px solid #006eff;
+  }
