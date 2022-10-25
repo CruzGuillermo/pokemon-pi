@@ -8,10 +8,10 @@ app.get("/", async (req, res) => {
   try {
     const pokemons = await InformacionPoke();
     if (name) {
-      const foundPokemon = pokemons.filter( (pokename) => pokename.name.toLowerCase() === name.toLowerCase()
+      const PokemonsRes = pokemons.filter( (pokename) => pokename.name.toLowerCase() === name.toLowerCase()
       );
-      if (foundPokemon.length > 0) {
-        return res.send(foundPokemon);
+      if (PokemonsRes.length > 0) {
+        return res.send(PokemonsRes);
       } else {
         return res.send([]);
       }

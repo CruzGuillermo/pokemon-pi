@@ -17,8 +17,6 @@ app.get("/", async (req, res) => {
         },
       });
     });
-
-    // const typeArray = await Type.findAll();
     res.send(typesArray);
   } catch (e) {
     console.log(e);
