@@ -8,7 +8,8 @@ app.get("/", async (req, res) => {
   try {
     const pokemons = await InformacionPoke();
     if (name) {
-      const PokemonsRes = pokemons.filter( (pokename) => pokename.name.toLowerCase() === name.toLowerCase()
+      const PokemonsRes = pokemons.filter(
+        (pokename) => pokename.name.toLowerCase() === name.toLowerCase()
       );
       if (PokemonsRes.length > 0) {
         return res.send(PokemonsRes);
@@ -28,7 +29,7 @@ app.get("/", async (req, res) => {
         weight: poke.weight,
         height: poke.height,
         types: poke.types,
-        createdInDb: poke.createdInDb || false,
+        database: poke.database || false,
       };
     });
     return res.send(pokemones);
@@ -41,10 +42,11 @@ app.get("/:idPokemon", async (req, res) => {
   const { idPokemon } = req.params;
   try {
     const pokemons = await InformacionPoke();
-    const BucarPokeXid = pokemons.filter((poke) => poke.id.toString() === idPokemon.toString()
+    const PokeXid = pokemons.filter(
+      (poke) => poke.id.toString() === idPokemon.toString()
     );
-    if (BucarPokeXid.length > 0) {
-      res.send(BucarPokeXid);
+    if (PokeXid.length > 0) {
+      res.send(PokeXid);
     } else {
       res.send([]);
     }
@@ -53,7 +55,7 @@ app.get("/:idPokemon", async (req, res) => {
   }
 });
 
-let id = 41
+let id = 41;
 app.post("/", async (req, res) => {
   const {
     name,
@@ -65,12 +67,12 @@ app.post("/", async (req, res) => {
     height,
     img,
     types,
-    createdInDb,
+    database,
   } = req.body;
   try {
     if (name) {
       let newPokemon = await Pokemon.create({
-       id : id++,
+        id: id++,
         name,
         hp,
         attack,
@@ -79,7 +81,7 @@ app.post("/", async (req, res) => {
         weight,
         height,
         img,
-        createdInDb,
+        database,
       });
 
       //los tipos solo pueden coincidir con los guardadas en db, por lo que le pido a mi modelo Type

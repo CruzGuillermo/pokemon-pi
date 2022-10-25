@@ -6,7 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define("pokemon", {
     name: {
       type: DataTypes.TEXT,
-      allowNull: false, //debe ser requerido obligatoriamente
+      allowNull: false, 
     },
     hp: {
       type: DataTypes.INTEGER,

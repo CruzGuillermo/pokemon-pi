@@ -99,9 +99,9 @@ function rootReducer(state = initialState, action) {
     case "FILTER_BY_CREATION":
       const pokemonCopyArray = state.pokemons;
       const filteredCreation =
-        action.payload === "createdInDb"
-          ? pokemonCopyArray.filter((pokemon) => pokemon.createdInDb)
-          : pokemonCopyArray.filter((pokemon) => !pokemon.createdInDb);
+        action.payload === "database"
+          ? pokemonCopyArray.filter((pokemon) => pokemon.database)
+          : pokemonCopyArray.filter((pokemon) => !pokemon.database);
       return {
         ...state,
         copyPokemons:
@@ -117,7 +117,7 @@ function rootReducer(state = initialState, action) {
         action.payload === "all"
           ? allPokemons
           : allPokemons.filter((pokemon) => {
-              if (!pokemon.createdInDb) {
+              if (!pokemon.database) {
                 return pokemon.types.find((type) => type === action.payload);
               } else {
                 return pokemon.types.find((type) => type.name === action.payload);

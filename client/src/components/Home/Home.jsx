@@ -139,7 +139,7 @@ const [pokemonsPerPage] = useState(12);
                 img={poke.img}
                 key={poke.id}
                 id={poke.id}
-                createdInDb={poke.createdInDb}
+                database={poke.database}
               />
             ))
           ) : (

@@ -17,6 +17,7 @@ app.get("/", async (req, res) => {
         },
       });
     });
+    console.log(typesArray)
     res.send(typesArray);
   } catch (e) {
     console.log(e);

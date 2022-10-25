@@ -47,7 +47,7 @@ export function getPokemonByName(name) {
       });
     } catch (e) {
       console.log(e);
-      alert(`Sorry the name ${name} was not found. Please try again`);
+      alert(`Lo siento, no se encontró el nombre ${name}. Inténtalo de nuevo`);
     }
   };
 }

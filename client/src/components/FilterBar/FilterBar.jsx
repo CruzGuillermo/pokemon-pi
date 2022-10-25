@@ -40,7 +40,7 @@ export default function FilterBar({
         <select onChange={(e) => handleCreation(e)}>
           <option disabled>Creation</option>
           <option value="all">Todos Pokemons</option>
-          <option value="createdInDb">Base de Datos</option>
+          <option value="database">Base de Datos</option>
           <option value="api">Aplicacion</option>
         </select>
       </div>

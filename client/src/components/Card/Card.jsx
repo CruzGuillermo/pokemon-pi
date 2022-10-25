@@ -4,7 +4,7 @@ import style from "./Card.module.css";
 import DefaultPoke from "./DefaultPoke.png"
 
 
-export default function Card({ name, img, types, id, createdInDb }) {
+export default function Card({ name, img, types, id, database }) {
   return (
     <Link to={`/home/${id}`} className={style.idPoke}>
       <div className={style.button}>
@@ -19,7 +19,7 @@ export default function Card({ name, img, types, id, createdInDb }) {
           <h3 className={style.title}>{name}</h3>
           <div className={style.types}>
             <strong>Tipo: </strong>
-            {!createdInDb ? types + " " : types.map((p) => p.name + " ")}
+            {!database ? types + " " : types.map((p) => p.name + " ")}
           </div>
         </div>
       </div>

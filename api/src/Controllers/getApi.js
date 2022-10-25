@@ -1,15 +1,15 @@
 const axios = require("axios");
 
 const getApi = async () => {
-let arrayPokemonsApi = [];
+let PokemonsApi = [];
 await axios.get("https://pokeapi.co/api/v2/pokemon?limit=40")
 .then(async (response) => {
-    let arrayResultApi = response.data.results;
+    let ResultApi = response.data.results;
     let arrayPromises = [];
-    arrayResultApi.map((p) => arrayPromises.push(axios.get(p.url)));   
+    ResultApi.map((p) => arrayPromises.push(axios.get(p.url)));   
     await Promise.all(arrayPromises)
     .then((pokemons) => {
-        arrayPokemonsApi = pokemons.map((poke) => {
+        PokemonsApi = pokemons.map((poke) => {
             return {
                 id: poke.data.id,
                 name: poke.data.name,
@@ -34,7 +34,7 @@ await axios.get("https://pokeapi.co/api/v2/pokemon?limit=40")
 .catch((error) => {
     return error;
 });
-return arrayPokemonsApi;
+return PokemonsApi;
 };
 
 module.exports = getApi;

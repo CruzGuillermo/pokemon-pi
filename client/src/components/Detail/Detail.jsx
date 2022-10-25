@@ -59,7 +59,7 @@ export default function Detail() {
                       <strong>Id:{poke.id}</strong> 
                       <br />
                       <strong>Tipo: 
-                      {!poke.createdInDb ? poke.types + " " : poke.types.map((type) => type.name + " ")}
+                      {!poke.database ? poke.types + " " : poke.types.map((type) => type.name + " ")}
                         </strong>
                     </ul>
                     <ul>
