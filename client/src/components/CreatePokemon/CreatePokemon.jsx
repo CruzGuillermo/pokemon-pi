@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllTypes, postPokemon } from "../../Redux/actions/index";
 import { Link, useNavigate  } from "react-router-dom";
-import logo from "../../images/pokemon.png";
+import LogoPoke from "./LogoPoke.png";
 import s from "./CreatePokemon.module.css";
 
 export function validate(pokemon) {
@@ -119,7 +119,7 @@ export default function CreatePokemon() {
     <div className={s.container}>
       <header className={s.header}>
       <Link to="/home" >
-        <img src={logo} alt="Logo Pokemon" className={s.logo} />
+        <img src={LogoPoke} alt="Logo Pokemon" className={s.logo} />
         </Link>
         <div className={s.funcional}>
           <Link to="/home" className={s.buttonn}>

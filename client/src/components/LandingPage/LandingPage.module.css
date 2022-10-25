@@ -24,8 +24,9 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
-    background: transparent;
+    /* background: transparent; */
     color: #fff;
+    background-color: rgba(0, 0, 0, .5);
     overflow: hidden;
     box-shadow: 0 0 0 0 transparent;
     -webkit-transition: all 0.2s ease-in;

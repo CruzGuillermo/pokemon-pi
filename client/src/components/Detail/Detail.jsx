@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPokemonById } from "../../Redux/actions";
 import { Link, useParams } from "react-router-dom";
 import s from "./Detail.module.css";
-import other from "../../images/default.jpg";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import NotFound from "../NotFound/NotFound";
-import imagen from "../../images/pokemon.png"
-import ImgDefault from "../Card/ImgDefault.gif"
+import LogoPoke from "./LogoPoke.png"
+import DefaultPoke from "./DefaultPoke.png"
 
 export default function Detail() {
   const dispatch = useDispatch();
@@ -17,7 +16,7 @@ export default function Detail() {
   const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
-    dispatch(getPokemonById(params.id));//props.match.params.id
+    dispatch(getPokemonById(params.id));
   }, [dispatch, params.id]);
 
   return (
@@ -25,8 +24,8 @@ export default function Detail() {
       <header className={s.header}>
         <div className={s.funcional}>
           <Link to="/home" className={s.link}>
-           <img src={imagen} alt="" 
-           width={100}
+           <img src={LogoPoke} alt="Logo" 
+           width={150}
            height={60}
            />
           </Link>
@@ -48,7 +47,7 @@ export default function Detail() {
               <div className={s.card}>
                 <div className={s.imageCont}>
                   <img
-                    src={poke.img ? poke.img : ImgDefault}
+                    src={poke.img ? poke.img : DefaultPoke}
                     alt="Pokemon imgs"
                     className={s.img}
                   />
@@ -93,67 +92,3 @@ export default function Detail() {
 
 
 
-// return (
-//   <div className={s.container}>
-//     <header className={s.header}>
-//       <div className={s.funcional}>
-//         <Link to="/home" className={s.link}>
-//          <img src={imagen} alt="" 
-//          width={100}
-//          height={60}
-//          />
-//         </Link>
-//       </div>
-//     </header>
-//     <main className={s.main}>
-//        { pokemon.map((p) => (
-//           <div className={s.cardContainer} key={p}>
-//             <div className={s.card}>
-//               <div className={s.imageCont}>
-//                 <h1 className={s.title}>{p.name}</h1>
-//                 <img
-//                   src={p.img ? p.img : other}
-//                   alt="Pokemon frontal pic"
-//                   className={s.img}
-//                 />
-//               </div>
-//               <div className={s.col}>
-//                 <div className={s.info}>
-//                   <h2 className= {s.titleInfo}>Pokemon Info</h2>
-//                   <p>
-//                     <strong>Id: </strong> {p.id}
-//                   </p>
-//                   <p>
-//                     <strong>Type: </strong>
-//                     {!p.createdInDb
-//                       ? p.types + " "
-//                       : p.types.map((e) => e.name + " ")}
-//                   </p>
-//                   <p>
-//                     <strong>Hp: </strong> {p.hp}
-//                   </p>
-//                   <p>
-//                     <strong>Strength: </strong> {p.attack}
-//                   </p>
-//                   <p>
-//                     <strong>Deffense: </strong> {p.defense}
-//                   </p>
-//                   <p>
-//                     <strong>Speed: </strong> {p.speed}
-//                   </p>
-//                   <p>
-//                     <strong>Height: </strong> {p.height}
-//                   </p>
-//                   <p>
-//                     <strong>Weight: </strong> {p.weight}
-//                   </p>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         ))
-//                     }
-//     </main>
-//   </div>
-// );
-// }

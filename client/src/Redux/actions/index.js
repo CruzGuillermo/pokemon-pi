@@ -1,6 +1,5 @@
 const axios = require("axios");
 
-
 export function getAllPokemons() {
   return async function (dispatch) {
     dispatch({
@@ -98,10 +97,7 @@ export function orderByStrenght(payload) {
 export function postPokemon(payload) {
   return async function (dispatch) {
     try {
-      let response = await axios.post(
-        "/pokemons",
-        payload
-      );
+      let response = await axios.post("/pokemons", payload);
       return dispatch({
         type: "POST_POKEMON",
         payload: response,
@@ -110,11 +106,4 @@ export function postPokemon(payload) {
       console.log(e);
     }
   };
-}
-
-export function Reset(payload){
-  return {
-    type: "Reset",
-    payload,
-  }
 }

@@ -13,7 +13,7 @@ import {
   orderByStrenght,
   filterByCreation,
 } from "../../Redux/actions/index";
-import logo from "../../images/pokemon.png";
+import LogoPoke from "./LogoPoke.png";
 import s from "./Home.module.css";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import NotFound from "../NotFound/NotFound";
@@ -28,14 +28,29 @@ export default function Home() {
 
   //estado local para ordenamiento alfabetico
   const [order, setOrder] = useState("");
-  console.log(order)
+  console.log(order);
 
   //estados locales para paginado
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pokemonsPerPage] = useState(12);
-  const indexOfLastPost = currentPage * pokemonsPerPage;//1*12=12    3*12=36
-  const indexOfFirstPost = indexOfLastPost - pokemonsPerPage;//12-12=0    36-12=24
-  const currentPokemons = allPokemons.slice(indexOfFirstPost, indexOfLastPost);/*toma desde el indice
+
+ // ----------> estado local para una pagina <-------------------
+const [currentPage, setCurrentPage] = useState(1);
+
+// ----------> estado local para una 12 pokemons <-------------------
+const [pokemonsPerPage] = useState(12);
+
+ 
+ 
+  const indexOfLastPost = currentPage * pokemonsPerPage; //1*12=12    3*12=36
+  // currentPage = 1 pagina 
+  // pokemonsPerPage = 12 pokemons
+  // Desde el indice 0 toma hasta el indice 12
+  const indexOfFirstPost = indexOfLastPost - pokemonsPerPage; //12-12=0    36-12=24
+
+  
+  const currentPokemons = allPokemons.slice(
+    indexOfFirstPost,
+    indexOfLastPost
+  ); /*toma desde el indice
   0 to 12..... o cuando se modifique el setCurrentPage ej 3 desde 24 a 36*/
 
   function paginado(pageNumber) {
@@ -53,7 +68,9 @@ export default function Home() {
     e.preventDefault();
     dispatch(orderByName(e.target.value));
     setCurrentPage(1);
-    setOrder(`Ordenado ${e.target.value}`); /*necesario para que el renderizado ocurra, estado local que
+    setOrder(
+      `Ordenado ${e.target.value}`
+    ); /*necesario para que el renderizado ocurra, estado local que
      inicia vacio y se completa al ejecutar la funcion*/
   }
 
@@ -75,48 +92,47 @@ export default function Home() {
   }
 
   return (
-    <div >
+    <div className={s.contenedorPadre}>
       <header className={s.header}>
         <div className={s.title}>
           <Link to={"/home"}>
-          <img src={logo} alt="Pokemon logo" className={s.logo} />
+            <img src={LogoPoke} alt="Pokemon logo" className={s.logo} />
           </Link>
           <div className={s.functional}>
-          <div className={s.filters}>
-            <FilterBar
-              allTypes={allTypes}
-              handleSort={handleSort}
-              handleOrderByStr={handleOrderByStr}
-              handleFilterType={handleFilterType}
-              handleCreation={handleCreation}
-            />
+            <div className={s.filters}>
+              <FilterBar
+                allTypes={allTypes}
+                handleSort={handleSort}
+                handleOrderByStr={handleOrderByStr}
+                handleFilterType={handleFilterType}
+                handleCreation={handleCreation}
+              />
+            </div>
           </div>
-        </div>
           <div>
             <Link to="/create" className={s.button}>
               Crear Pokemon
             </Link>
           </div>
         </div>
-       
+
         <div className={s.search}>
-            <SearchBar />
-          </div>
+          <SearchBar />
+        </div>
       </header>
       <div className={s.paginado}>
-          <Paginado
-            pokemonsPerPage={pokemonsPerPage}
-            allPokemons={allPokemons}
-            paginado={paginado}
-          />
-        </div>
+        <Paginado
+          pokemonsPerPage={pokemonsPerPage}
+          allPokemons={allPokemons}
+          paginado={paginado}
+        />
+      </div>
       <main className={s.main}>
         <div className={s.cards}>
           {loading ? (
             <LoadingPage />
           ) : currentPokemons.length > 0 ? (
             currentPokemons.map((poke) => (
-              
               <Card
                 name={poke.name}
                 types={poke.types}
@@ -125,7 +141,6 @@ export default function Home() {
                 id={poke.id}
                 createdInDb={poke.createdInDb}
               />
-           
             ))
           ) : (
             <NotFound />

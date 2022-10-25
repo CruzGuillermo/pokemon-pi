@@ -1,11 +1,4 @@
 .filter {
-  /* background-color: transparent; */
     display: flex;
-    /* width: 100px; */
     gap: 15x;
-  }
-
-  .filtrado{
-    color: red;
-    background-color: transparent;
   }

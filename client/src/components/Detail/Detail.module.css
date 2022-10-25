@@ -1,9 +1,11 @@
 .container {
-    display: grid;
+    
+    background: url("./screen-3.jpg")  no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    min-height: 100vh;
-    background-image: url("./screen-3.jpg");
-    background-size: cover;
+  
   }
   
   .header {
@@ -19,25 +21,13 @@
     flex-direction: column;
     margin: 10px 20px;
   }
-  .link2 {
-    
-    /* align-items: center; */
-    /* text-align: center; */
-    text-decoration: none;
-    font-size: 6px;
-    transition: all 1s ease-in-out;
-    padding: 50px;
-  }
+ 
   .link {
-    
+    color: black;
     align-items: center;
     text-align: center;
     text-decoration: none;
-    /* font-size: 16px; */
-    /* width:80 px ;
-           height:40px; */
     transition: all 1s ease-in-out;
-    /* padding: 8px; */
   }
 
    .centro{
@@ -64,8 +54,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border-radius: none; */
-    
   }
   
   .card {
@@ -82,7 +70,7 @@
   }
   
   .title {
-    text-transform: uppercase;
+                text-transform: uppercase;
     color: rgb(255, 255, 255);
     text-shadow:0px 5px 10px black;
     text-align: center;
@@ -113,7 +101,6 @@
     align-items: center;
     width: 230px;
     margin: -12px 15px 0px 15px;
-    /* border-radius: 100%; */
   }
   .button {
     cursor: pointer;
@@ -126,7 +113,7 @@
     font-weight: 600;
     letter-spacing: 2px;
     background: transparent;
-    color: #fff;
+    color: rgb(0, 0, 0);
     overflow: hidden;
     box-shadow: 0 0 0 0 transparent;
     -webkit-transition: all 0.2s ease-in;
@@ -140,6 +127,7 @@
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
+    color: #fff;
   }
   
   .button:hover::before {

@@ -5,11 +5,10 @@ import s from "./LandingPage.module.css";
 function LandingPage() {
   return (
     <div className={s.container}>
-      <div className={s.imageContainer}>
-      </div>
+      <div className={s.imageContainer}></div>
       <div className={s.btnContainer}>
         <Link to="/home">
-          <button className={s.button}>ENTER!</button>
+          <button className={s.button}>INGRESAR!</button>
         </Link>
       </div>
     </div>

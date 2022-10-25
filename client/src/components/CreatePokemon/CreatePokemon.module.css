@@ -1,14 +1,15 @@
 .buttonn {
   cursor: pointer;
   position: relative;
-  margin: 10px;
   padding: 10px 20px;
   border-radius: 7px;
-  border: 1px solid rgb(61, 106, 255);
+  border: 1px solid rgb(255, 255, 255);
   font-size: 14px;
   text-transform: uppercase;
+  justify-content: center;
+  justify-items: center;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   background: transparent;
   color: rgb(255, 255, 255);
   overflow: hidden;
@@ -17,6 +18,7 @@
   -moz-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   background-color: rgba(0, 0, 0, .5);
+  text-decoration: none;
 }
 
 .buttonn:hover {
@@ -74,10 +76,11 @@
   transition: box-shadow 0.2s ease-in;
 }
 .container {
-  background-image: url("./landing2.jpg");
+  background: url("./CreateImg.jpg")  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-    display: grid;
-    grid-auto-rows: 130px, auto, 130px;
   }
   
   .header {
@@ -98,6 +101,7 @@
     width: 100px;
     padding-left: 15px;
     padding-top: 10px;
+    margin: 20px;
   }
   
   .link {
@@ -126,7 +130,7 @@
   }
   
   .formContainer {
-    width: 35%;
+        width: 35%;
     display: flex;
     flex-direction: column;
     border-radius: 20px;

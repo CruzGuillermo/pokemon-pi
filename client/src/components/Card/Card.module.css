@@ -11,7 +11,7 @@
   font-weight: 600;
   letter-spacing: 2px;
   background: transparent;
-  /* color: rgb(255, 255, 255); */
+  background-color: rgba(0, 0, 0, .5);
   overflow: hidden;
   box-shadow: 0 0 0 0 transparent;
   -webkit-transition: all 0.2s ease-in;
@@ -73,13 +73,7 @@
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
-.id{
-  padding: 10px;
-  color: black;
-  justify-content: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-align: center;
-}
+
 
 .title {
   text-align: center;
@@ -96,12 +90,6 @@
   margin: -12px 15px 0px 15px;
   /* background: white; */
 }
-
-/* .types {
-  display: flex;
-  gap: 13px;
-  justify-content: center;
-} */
 
 .data {
   display: flex;
